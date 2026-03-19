@@ -1,8 +1,8 @@
 ---
-title: J.A.R.V.I.S. Telegram Tutorial
+title: OmicVerse Claw — Telegram Tutorial
 ---
 
-# J.A.R.V.I.S. Telegram Tutorial
+# OmicVerse Claw — Telegram Tutorial
 
 ## 1. Create a Telegram Bot
 
@@ -21,13 +21,13 @@ export ANTHROPIC_API_KEY="your_api_key"
 ## 3. Minimal Start Command
 
 ```bash
-omicverse jarvis --channel telegram --token "$TELEGRAM_BOT_TOKEN"
+omicverse claw --channel telegram --token "$TELEGRAM_BOT_TOKEN"
 ```
 
 ## 4. Full Start Command
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel telegram \
   --token "$TELEGRAM_BOT_TOKEN" \
   --model claude-sonnet-4-6 \
@@ -44,7 +44,7 @@ Parameter explanation:
 
 - `--channel telegram`: selects Telegram backend.
 - `--token`: Telegram bot token (or `TELEGRAM_BOT_TOKEN`).
-- `--model`: model name used by Jarvis.
+- `--model`: LLM model name.
 - `--api-key`: explicit LLM provider key.
 - `--auth-mode environment`: read auth from env vars.
 - `--session-dir`: runtime root directory.
@@ -67,11 +67,11 @@ Parameter explanation:
 
 ## 6. Troubleshooting
 
-1. Missing Telegram dependency  
+1. Missing Telegram dependency
    Run `pip install -e ".[jarvis]"`.
 
-2. Missing token error  
+2. Missing token error
    Check `TELEGRAM_BOT_TOKEN` or `--token`.
 
-3. Polling `409 Conflict`  
+3. Polling `409 Conflict`
    Stop other processes using the same bot token.

@@ -1,8 +1,8 @@
 ---
-title: J.A.R.V.I.S. Setup and Auth
+title: OmicVerse Claw — Setup and Auth
 ---
 
-# J.A.R.V.I.S. Setup and Auth
+# OmicVerse Claw — Setup and Auth
 
 This page covers baseline setup shared by all channels.
 
@@ -27,13 +27,13 @@ brew install steipete/tap/imsg
 ## 2. Minimal Start Command
 
 ```bash
-omicverse jarvis --setup
+omicverse claw --setup
 ```
 
 ## 3. Full Setup Command
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --setup \
   --setup-language zh \
   --config-file ~/.ovjarvis/config.json \
@@ -45,7 +45,7 @@ Parameter explanation:
 
 - `--setup`: runs the interactive setup wizard before launch.
 - `--setup-language`: setup UI language (`en` or `zh`).
-- `--config-file`: path to persisted Jarvis config.
+- `--config-file`: path to persisted config.
 - `--auth-file`: path to saved auth state (API keys/OAuth tokens).
 - `--verbose`: enables debug-level logs.
 
@@ -59,8 +59,10 @@ export ANTHROPIC_API_KEY="your_api_key"
 You can also pass a key directly:
 
 ```bash
-omicverse jarvis --api-key "your_api_key"
+omicverse claw --api-key "your_api_key"
 ```
+
+> **Note:** `omicverse jarvis` is a legacy alias for `omicverse claw` and behaves identically.
 
 ## 5. Common Runtime Parameters
 

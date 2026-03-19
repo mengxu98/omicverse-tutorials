@@ -1,10 +1,10 @@
 ---
-title: J.A.R.V.I.S. Msg Bot Overview
+title: OmicVerse Claw — Msg Bot Overview
 ---
 
-# J.A.R.V.I.S. Msg Bot Overview
+# OmicVerse Claw — Msg Bot Overview
 
-This section shows how to run Jarvis as a message bot across channels:
+`omicverse claw` can run as a message bot across channels:
 
 - Telegram (English)
 - Feishu (中文)
@@ -26,7 +26,7 @@ pip install "omicverse[jarvis]"
 ## 2. First-Time Setup (Recommended)
 
 ```bash
-omicverse jarvis --setup --setup-language zh
+omicverse claw --setup --setup-language zh
 ```
 
 The setup wizard writes:

@@ -1,10 +1,10 @@
 ---
-title: J.A.R.V.I.S. Feishu Tutorial
+title: OmicVerse Claw — Feishu Tutorial
 ---
 
-# J.A.R.V.I.S. Feishu 教程
+# OmicVerse Claw — Feishu 教程
 
-Jarvis 支持飞书两种接入模式：
+OmicVerse Claw 支持飞书两种接入模式：
 
 - `websocket`（默认，推荐）
 - `webhook`（需要公网回调地址）
@@ -29,7 +29,7 @@ export ANTHROPIC_API_KEY="your_api_key"
 ## 3. 最小启动命令（WebSocket）
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel feishu \
   --feishu-connection-mode websocket \
   --feishu-app-id "$FEISHU_APP_ID" \
@@ -39,7 +39,7 @@ omicverse jarvis \
 ## 4. 完整启动命令（WebSocket）
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel feishu \
   --feishu-connection-mode websocket \
   --feishu-app-id "$FEISHU_APP_ID" \
@@ -62,7 +62,7 @@ omicverse jarvis \
 - `--feishu-app-secret`：飞书应用 App Secret。
 - `--feishu-verification-token`：事件 token 校验值（可选但推荐）。
 - `--feishu-encrypt-key`：加密回调解密密钥（启用加密时必须）。
-- `--model`：Jarvis 使用的模型名称。
+- `--model`：Claw 使用的模型名称。
 - `--api-key`：显式指定 LLM API key。
 - `--auth-mode environment`：从环境变量读取认证信息。
 - `--session-dir`：会话根目录。
@@ -72,7 +72,7 @@ omicverse jarvis \
 ## 5. 完整启动命令（Webhook）
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel feishu \
   --feishu-connection-mode webhook \
   --feishu-app-id "$FEISHU_APP_ID" \
@@ -104,11 +104,11 @@ http://<你的公网域名或IP>:8080/feishu/events
 
 ## 6. 常见问题
 
-1. WebSocket 报错缺少 SDK  
+1. WebSocket 报错缺少 SDK
    执行 `pip install lark-oapi`。
 
-2. Webhook 验证失败  
+2. Webhook 验证失败
    检查回调 URL 与 `--feishu-host/--feishu-port/--feishu-path` 是否一致，并确认公网可达。
 
-3. 能收消息但不能发图/文件  
+3. 能收消息但不能发图/文件
    检查飞书应用权限是否已开通并生效。

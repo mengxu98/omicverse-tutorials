@@ -1,13 +1,13 @@
 ---
-title: J.A.R.V.I.S. Troubleshooting
+title: OmicVerse Claw — Troubleshooting
 ---
 
-# J.A.R.V.I.S. Troubleshooting
+# OmicVerse Claw — Troubleshooting
 
 ## 1. General
 
-1. Setup wizard did not start  
-   Run `omicverse jarvis --setup --setup-language zh`.
+1. Setup wizard did not start
+   Run `omicverse claw --setup` (or `omicverse claw --setup --setup-language zh` for Chinese).
 
 2. Model change did not apply  
    Run `/model <new_model>`, then `/reset`.

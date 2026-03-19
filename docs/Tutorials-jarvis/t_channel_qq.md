@@ -1,8 +1,8 @@
 ---
-title: J.A.R.V.I.S. QQ Tutorial
+title: OmicVerse Claw — QQ Tutorial
 ---
 
-# J.A.R.V.I.S. QQ Tutorial
+# OmicVerse Claw — QQ Tutorial
 
 ## 1. 准备 QQ Bot 凭据
 
@@ -18,10 +18,10 @@ export QQ_APP_ID="your_qq_app_id"
 export QQ_CLIENT_SECRET="your_qq_client_secret"
 ```
 
-## 2. 启动 Jarvis（QQ）
+## 2. 启动 Claw（QQ）
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel qq \
   --qq-app-id "$QQ_APP_ID" \
   --qq-client-secret "$QQ_CLIENT_SECRET"
@@ -30,7 +30,7 @@ omicverse jarvis \
 ## 3. 图片与 Markdown（可选）
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel qq \
   --qq-app-id "$QQ_APP_ID" \
   --qq-client-secret "$QQ_CLIENT_SECRET" \
@@ -47,11 +47,11 @@ omicverse jarvis \
 
 ## 4. 常见问题
 
-1. 启动时报凭据缺失  
+1. 启动时报凭据缺失
    检查 `QQ_APP_ID`、`QQ_CLIENT_SECRET` 或对应 CLI 参数
 
-2. 文字能发但图片发送失败  
+2. 文字能发但图片发送失败
    检查 `--qq-image-host` 是否为公网可访问地址
 
-3. Markdown 不生效  
+3. Markdown 不生效
    检查 QQ 开放平台机器人是否已开通 markdown 消息权限

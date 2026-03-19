@@ -29,13 +29,13 @@ So the OmicVerse integration point is not a custom OpenClaw protocol. It is a sk
 The goal is to give OpenClaw a stable interface like:
 
 ```bash
-omicverse claw "basic qc and clustering"
+omicverse claw -q "basic qc and clustering"
 ```
 
 or, when you want a deterministic output file:
 
 ```bash
-omicverse claw --output omicverse_generated.py "basic qc and clustering"
+omicverse claw -q "basic qc and clustering" --output omicverse_generated.py
 ```
 
 In other words, OpenClaw should treat `omicverse claw` as the local backend that turns a natural-language request into OmicVerse code.
@@ -90,7 +90,7 @@ Always call the local OmicVerse CLI with OpenClaw's `exec` tool instead of inven
 
 Preferred command:
 
-`omicverse claw --output "{baseDir}/omicverse_claw_latest.py" "<user request>"`
+`omicverse claw -q "<user request>" --output "{baseDir}/omicverse_claw_latest.py"`
 
 Rules:
 
@@ -144,19 +144,19 @@ If the skill does not appear immediately, start a new OpenClaw session. OpenClaw
 For one-off generation, the skill should usually run:
 
 ```bash
-omicverse claw --output "{baseDir}/omicverse_claw_latest.py" "<user request>"
+omicverse claw -q "<user request>" --output "{baseDir}/omicverse_claw_latest.py"
 ```
 
 For debugging:
 
 ```bash
-omicverse claw --debug-registry --output "{baseDir}/omicverse_claw_latest.py" "<user request>"
+omicverse claw -q "<user request>" --output "{baseDir}/omicverse_claw_latest.py" --debug-registry
 ```
 
 For repeated use on the same machine, the skill can prefer the daemon-backed path:
 
 ```bash
-omicverse claw --use-daemon --output "{baseDir}/omicverse_claw_latest.py" "<user request>"
+omicverse claw -q "<user request>" --output "{baseDir}/omicverse_claw_latest.py" --use-daemon
 ```
 
 That is the real interface OpenClaw should rely on.
@@ -208,11 +208,11 @@ prepare a harmony-based batch correction workflow
 
 ## 10. Important Notes
 
-- `omicverse claw` is a code-generation interface, not a chat runtime
+- `omicverse claw -q` is the code-generation interface, not a chat runtime
 - OpenClaw should use it to generate OmicVerse code, not replace it with ad hoc shell logic
 - `stdout` is the code payload; `stderr` is for init logs and debug information
-- `--output` is the most stable pattern for OpenClaw skill usage
-- daemon mode is useful only when OpenClaw will call `omicverse claw` repeatedly
+- `-q "<request>" --output <file>` is the most stable pattern for OpenClaw skill usage
+- daemon mode (`--use-daemon`) is useful only when OpenClaw will call `omicverse claw` repeatedly
 
 ## 11. Related Pages
 

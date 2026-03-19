@@ -1,8 +1,8 @@
 ---
-title: J.A.R.V.I.S. iMessage Tutorial
+title: OmicVerse Claw — iMessage Tutorial
 ---
 
-# J.A.R.V.I.S. iMessage Tutorial
+# OmicVerse Claw — iMessage Tutorial
 
 iMessage channel works on macOS and requires `imsg`.
 
@@ -15,7 +15,7 @@ brew install steipete/tap/imsg
 ## 2. Minimal Start Command
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel imessage \
   --imessage-cli-path "$(which imsg)" \
   --imessage-db-path ~/Library/Messages/chat.db
@@ -24,7 +24,7 @@ omicverse jarvis \
 ## 3. Full Start Command
 
 ```bash
-omicverse jarvis \
+omicverse claw \
   --channel imessage \
   --imessage-cli-path "$(which imsg)" \
   --imessage-db-path ~/Library/Messages/chat.db \
@@ -43,7 +43,7 @@ Parameter explanation:
 - `--imessage-cli-path`: path to `imsg` executable.
 - `--imessage-db-path`: path to macOS Messages SQLite DB.
 - `--imessage-include-attachments`: include attachment metadata in inbound events.
-- `--model`: model name used for analysis.
+- `--model`: LLM model name.
 - `--api-key`: explicit LLM provider key.
 - `--auth-mode environment`: read auth from env vars.
 - `--session-dir`: runtime root directory.
@@ -52,8 +52,8 @@ Parameter explanation:
 
 ## 4. Troubleshooting
 
-1. `imsg` not found  
+1. `imsg` not found
    Check `which imsg`.
 
-2. Cannot read `chat.db`  
+2. Cannot read `chat.db`
    Verify DB path and macOS permissions.
