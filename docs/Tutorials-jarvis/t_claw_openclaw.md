@@ -217,4 +217,4 @@ prepare a harmony-based batch correction workflow
 ## 11. Related Pages
 
 - Full CLI tutorial: [OmicVerse Claw CLI](t_claw_cli.md)
-- Jarvis overview: [Msg Bot Overview](t_msg_bot_overview.md)
+- Gateway overview: [OmicClaw Gateway Overview](t_msg_bot_overview.md)

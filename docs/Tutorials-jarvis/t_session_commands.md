@@ -1,18 +1,44 @@
 ---
-title: J.A.R.V.I.S. Session and Commands
+title: OmicClaw Session Workflow
 ---
 
-# J.A.R.V.I.S. Session and Commands
+# OmicClaw Session Workflow
+
+The current OmicClaw deployment model is a shared gateway runtime:
+
+- the web UI runs inside gateway mode
+- optional channels such as Telegram, Feishu, iMessage, and QQ connect to the same runtime
+- interactive state is still stored under `~/.ovjarvis`
 
 ## 1. Recommended Workflow
 
-1. Upload a `.h5ad` file to chat or workspace.
-2. Run `/workspace` and `/load <filename>`.
-3. Send your analysis request in natural language.
-4. Monitor with `/status` and `/kernel`.
-5. Export results with `/save`.
+1. Start `omicclaw` or `omicverse gateway`.
+2. If needed, add a channel with `--channel ...`.
+3. Upload a `.h5ad` file in chat or through the web workspace.
+4. Load the dataset and issue natural-language analysis requests.
+5. Inspect status and kernel health.
+6. Export results with `/save` or from the web UI.
 
-## 2. Common Commands
+## 2. Current Session Root
+
+Default root:
+
+```text
+~/.ovjarvis
+```
+
+Common entries:
+
+- `config.json`
+- `auth.json`
+- `workspace/`
+- `sessions/`
+- `context/`
+- `memory/`
+
+## 3. Message-Channel Commands
+
+Current command set includes:
 
 - `/workspace`
 - `/ls [path]`
@@ -30,26 +56,20 @@ title: J.A.R.V.I.S. Session and Commands
 - `/kernel new <name>`
 - `/kernel use <name>`
 
-## 3. Session Directory Layout
+## 4. Gateway and Web Behavior
 
-Default root:
+When started through `omicclaw` or `omicverse gateway`:
 
-```text
-~/.ovjarvis
+- the web gateway stays available even without a channel
+- if a channel is configured, channel turns and web runtime share the same launcher stack
+- missing channel credentials do not block gateway mode; the launcher can fall back to web-only mode
+
+## 5. Code-Only Mode Is Separate
+
+This session workflow does not apply to one-shot code generation.
+
+For code only, use:
+
+```bash
+omicverse claw -q "basic qc and clustering"
 ```
-
-Typical entries:
-
-- `workspace/`
-- `sessions/`
-- `context/`
-- `current.h5ad`
-- `kernels/<name>/...`
-
-## 4. Behavior Customization
-
-Files in workspace:
-
-- `AGENTS.md`: assistant behavior rules.
-- `MEMORY.md`: long-term memory.
-- `memory/YYYY-MM-DD.md`: daily memory summaries.

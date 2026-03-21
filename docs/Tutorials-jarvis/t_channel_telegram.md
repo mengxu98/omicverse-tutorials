@@ -1,15 +1,17 @@
 ---
-title: J.A.R.V.I.S. Telegram Tutorial
+title: OmicClaw Telegram Tutorial
 ---
 
-# J.A.R.V.I.S. Telegram Tutorial
+# OmicClaw Telegram Tutorial
+
+Telegram is now documented as a gateway-backed channel, not as a standalone old Jarvis entry.
 
 ## 1. Create a Telegram Bot
 
 1. Open `@BotFather` in Telegram.
 2. Send `/newbot`.
-3. Provide bot display name and username (username must end with `bot`).
-4. Save the token as `TELEGRAM_BOT_TOKEN`.
+3. Provide the display name and username.
+4. Save the returned token as `TELEGRAM_BOT_TOKEN`.
 
 ## 2. Environment Variables
 
@@ -18,16 +20,24 @@ export TELEGRAM_BOT_TOKEN="123456:ABC-..."
 export ANTHROPIC_API_KEY="your_api_key"
 ```
 
-## 3. Minimal Start Command
+## 3. Recommended Start Command
+
+OmicClaw product entry:
 
 ```bash
-omicverse jarvis --channel telegram --token "$TELEGRAM_BOT_TOKEN"
+omicclaw --channel telegram --token "$TELEGRAM_BOT_TOKEN"
+```
+
+Generic gateway entry:
+
+```bash
+omicverse gateway --channel telegram --token "$TELEGRAM_BOT_TOKEN"
 ```
 
 ## 4. Full Start Command
 
 ```bash
-omicverse jarvis \
+omicclaw \
   --channel telegram \
   --token "$TELEGRAM_BOT_TOKEN" \
   --model claude-sonnet-4-6 \
@@ -37,22 +47,17 @@ omicverse jarvis \
   --max-prompts 0 \
   --allowed-user your_telegram_username \
   --allowed-user 123456789 \
+  --web-port 5050 \
   --verbose
 ```
 
-Parameter explanation:
+## 5. Notes on Current Behavior
 
-- `--channel telegram`: selects Telegram backend.
-- `--token`: Telegram bot token (or `TELEGRAM_BOT_TOKEN`).
-- `--model`: model name used by Jarvis.
-- `--api-key`: explicit LLM provider key.
-- `--auth-mode environment`: read auth from env vars.
-- `--session-dir`: runtime root directory.
-- `--max-prompts 0`: disables automatic kernel restart.
-- `--allowed-user`: restricts access to specific users (repeatable).
-- `--verbose`: enables detailed logs.
+- Starting through `omicclaw` or `omicverse gateway` also launches the web gateway.
+- If you want the old channel-only compatibility path, you can still use `omicverse jarvis --channel telegram`.
+- If you want code only, do not use this path; use `omicverse claw -q ...`.
 
-## 5. Common Commands
+## 6. Common Commands
 
 - `/workspace`
 - `/load <filename>`
@@ -65,13 +70,13 @@ Parameter explanation:
 - `/cancel`
 - `/reset`
 
-## 6. Troubleshooting
+## 7. Troubleshooting
 
 1. Missing Telegram dependency  
-   Run `pip install -e ".[jarvis]"`.
+   Run `pip install -e ".[jarvis]"` or `pip install "omicverse[jarvis]"`.
 
 2. Missing token error  
    Check `TELEGRAM_BOT_TOKEN` or `--token`.
 
-3. Polling `409 Conflict`  
+3. `409 Conflict`  
    Stop other processes using the same bot token.

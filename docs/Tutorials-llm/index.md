@@ -30,20 +30,21 @@ This page is a markdown overview for the AI-related tutorials currently exposed 
   - [GenePT](t_fm_genept_guide.md)
   - [ChatCell](t_fm_chatcell_guide.md)
 
-## J.A.R.V.I.S.
+## OmicClaw and Gateway
 
 - Notebook / pipeline workflows
   - [J.A.R.V.I.S. with PBMC3k](t_ov_agent_pbmc3k.ipynb)
   - [J.A.R.V.I.S. with Ten-Task Suite](ov_agent_ten_task_suite.ipynb)
-- MCP server tutorials
-  - [Overview](t_mcp_guide.md)
-  - [Quick Start](t_mcp_quickstart.md)
-  - [Full Start](t_mcp_full_start.md)
-  - [Tool Catalog](t_mcp_tools.md)
-  - [Clients and Deployment](t_mcp_clients.md)
-  - [Runtime and Troubleshooting](t_mcp_runtime.md)
-  - [Reference](t_mcp_reference.md)
-  - [Claude Code Walkthrough](t_mcp_claude_code.md)
-- Domain research
-  - [Basic Usage](t_dr.ipynb)
-  - [Live Web](t_dr_web.md)
+- Gateway and channel tutorials
+  - [OmicClaw Gateway Overview](../Tutorials-jarvis/t_msg_bot_overview.md)
+  - [Setup and Auth](../Tutorials-jarvis/t_setup_auth.md)
+  - [Telegram Tutorial](../Tutorials-jarvis/t_channel_telegram.md)
+  - [Feishu Tutorial](../Tutorials-jarvis/t_channel_feishu.md)
+  - [iMessage Tutorial](../Tutorials-jarvis/t_channel_imessage.md)
+  - [QQ Tutorial](../Tutorials-jarvis/t_channel_qq.md)
+  - [Session Workflow](../Tutorials-jarvis/t_session_commands.md)
+  - [Common Issues](../Tutorials-jarvis/t_troubleshooting.md)
+- Coding and MCP remain separate
+  - [Overview and CLI](../Tutorials-jarvis/t_claw_cli.md)
+  - [OpenClaw Integration](../Tutorials-jarvis/t_claw_openclaw.md)
+  - [MCP Overview](t_mcp_guide.md)

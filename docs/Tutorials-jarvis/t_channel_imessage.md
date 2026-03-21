@@ -1,10 +1,10 @@
 ---
-title: J.A.R.V.I.S. iMessage Tutorial
+title: OmicClaw iMessage Tutorial
 ---
 
-# J.A.R.V.I.S. iMessage Tutorial
+# OmicClaw iMessage Tutorial
 
-iMessage channel works on macOS and requires `imsg`.
+iMessage remains a macOS-only channel, but it is now typically launched through the gateway stack.
 
 ## 1. Install Dependency
 
@@ -12,10 +12,19 @@ iMessage channel works on macOS and requires `imsg`.
 brew install steipete/tap/imsg
 ```
 
-## 2. Minimal Start Command
+## 2. Recommended Start Command
 
 ```bash
-omicverse jarvis \
+omicclaw \
+  --channel imessage \
+  --imessage-cli-path "$(which imsg)" \
+  --imessage-db-path ~/Library/Messages/chat.db
+```
+
+Equivalent generic gateway entry:
+
+```bash
+omicverse gateway \
   --channel imessage \
   --imessage-cli-path "$(which imsg)" \
   --imessage-db-path ~/Library/Messages/chat.db
@@ -24,7 +33,7 @@ omicverse jarvis \
 ## 3. Full Start Command
 
 ```bash
-omicverse jarvis \
+omicclaw \
   --channel imessage \
   --imessage-cli-path "$(which imsg)" \
   --imessage-db-path ~/Library/Messages/chat.db \
@@ -37,23 +46,19 @@ omicverse jarvis \
   --verbose
 ```
 
-Parameter explanation:
+## 4. Current Notes
 
-- `--channel imessage`: selects iMessage backend.
-- `--imessage-cli-path`: path to `imsg` executable.
-- `--imessage-db-path`: path to macOS Messages SQLite DB.
-- `--imessage-include-attachments`: include attachment metadata in inbound events.
-- `--model`: model name used for analysis.
-- `--api-key`: explicit LLM provider key.
-- `--auth-mode environment`: read auth from env vars.
-- `--session-dir`: runtime root directory.
-- `--max-prompts 0`: disables automatic kernel restart.
-- `--verbose`: enables detailed logs.
+- Launching through `omicclaw` or `omicverse gateway` keeps the web gateway available.
+- Launching through `omicverse jarvis --channel imessage` is still supported as a compatibility path.
+- Use `omicverse claw -q ...` only for code generation, not for iMessage bot runtime.
 
-## 4. Troubleshooting
+## 5. Troubleshooting
 
 1. `imsg` not found  
    Check `which imsg`.
 
 2. Cannot read `chat.db`  
-   Verify DB path and macOS permissions.
+   Verify the DB path and macOS permission prompts.
+
+3. Attachments are missing  
+   Start with `--imessage-include-attachments`.

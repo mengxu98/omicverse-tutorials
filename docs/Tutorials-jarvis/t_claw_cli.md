@@ -218,5 +218,5 @@ Use `jarvis` when:
 ## 11. Related Pages
 
 - OpenClaw integration: [OpenClaw Integration](t_claw_openclaw.md)
-- Jarvis overview: [Msg Bot Overview](t_msg_bot_overview.md)
+- Gateway overview: [OmicClaw Gateway Overview](t_msg_bot_overview.md)
 - MCP quick start: [OmicVerse MCP Quick Start](../Tutorials-llm/t_mcp_quickstart.md)
