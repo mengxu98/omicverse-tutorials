@@ -171,13 +171,13 @@ nav:
         - Palette optimization for publication-quality single-cell & spatial plots: Tutorials-plotting/t_palette.ipynb
         - Color system: Tutorials-plotting/t_visualize_colorsystem.ipynb
 - OmicClaw Tutorial:
-    - General[Notebook/pipeline]: 
+    - General[Notebook/pipeline]:
         - J.A.R.V.I.S. with PBMC3k: Tutorials-llm/t_ov_agent_pbmc3k.ipynb
         - J.A.R.V.I.S. with Ten-Task Suite: Tutorials-llm/ov_agent_ten_task_suite.ipynb
     - Gateway and Channels:
         - Overview: Tutorials-jarvis/t_msg_bot_overview.md
         - Setup and Auth: Tutorials-jarvis/t_setup_auth.md
-        - Channel Entry Points: 
+        - Channel Entry Points:
             - Telegram Tutorial: Tutorials-jarvis/t_channel_telegram.md
             - Feishu Tutorial: Tutorials-jarvis/t_channel_feishu.md
             - iMessage Tutorial: Tutorials-jarvis/t_channel_imessage.md

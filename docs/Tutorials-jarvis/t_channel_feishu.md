@@ -107,11 +107,11 @@ http://<你的公网域名或IP>:8080/feishu/events
 
 ## 7. 常见问题
 
-1. WebSocket 报缺少 SDK  
+1. WebSocket 报缺少 SDK
    安装 `lark-oapi`。
 
-2. Webhook 验证失败  
+2. Webhook 验证失败
    检查公网回调地址与 `--feishu-host/--feishu-port/--feishu-path` 是否一致。
 
-3. 文字能收发，但图片或文件失败  
+3. 文字能收发，但图片或文件失败
    检查飞书应用权限是否已生效。

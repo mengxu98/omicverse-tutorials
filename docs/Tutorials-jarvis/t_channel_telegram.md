@@ -72,11 +72,11 @@ omicclaw \
 
 ## 7. Troubleshooting
 
-1. Missing Telegram dependency  
+1. Missing Telegram dependency
    Run `pip install -e ".[jarvis]"` or `pip install "omicverse[jarvis]"`.
 
-2. Missing token error  
+2. Missing token error
    Check `TELEGRAM_BOT_TOKEN` or `--token`.
 
-3. `409 Conflict`  
+3. `409 Conflict`
    Stop other processes using the same bot token.

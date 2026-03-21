@@ -70,11 +70,11 @@ omicclaw \
 
 ## 5. 常见问题
 
-1. 启动时报凭据缺失  
+1. 启动时报凭据缺失
    检查 `QQ_APP_ID`、`QQ_CLIENT_SECRET` 或对应 CLI 参数。
 
-2. 文字能发但图片发送失败  
+2. 文字能发但图片发送失败
    检查 `--qq-image-host` 是否公网可达。
 
-3. Markdown 不生效  
+3. Markdown 不生效
    检查 QQ 开放平台是否已经开通 markdown 消息权限。

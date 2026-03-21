@@ -54,11 +54,11 @@ omicclaw \
 
 ## 5. Troubleshooting
 
-1. `imsg` not found  
+1. `imsg` not found
    Check `which imsg`.
 
-2. Cannot read `chat.db`  
+2. Cannot read `chat.db`
    Verify the DB path and macOS permission prompts.
 
-3. Attachments are missing  
+3. Attachments are missing
    Start with `--imessage-include-attachments`.
