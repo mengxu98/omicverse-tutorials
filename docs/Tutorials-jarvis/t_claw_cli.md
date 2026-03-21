@@ -12,7 +12,7 @@ Use it when you want:
 - no direct execution on the current machine
 - a fast CLI workflow that can be called from shells, scripts, or external tools
 
-If you want a chat-style bot workflow, use `omicverse jarvis`.
+If you want a chat-style gateway workflow, use `omicclaw` or `omicverse gateway`.
 If you want a tool server for Claude Code or other MCP clients, use `omicverse mcp`.
 
 ## 1. Install

@@ -40,12 +40,6 @@ Generic gateway first run:
 omicverse gateway --setup --setup-language zh
 ```
 
-Legacy compatibility path:
-
-```bash
-omicverse jarvis --setup --setup-language zh
-```
-
 ## 3. Persisted Config and Auth Files
 
 By default the launcher stores state under:
@@ -91,7 +85,6 @@ The new entry logic is:
 - `omicclaw`: starts gateway mode with forced login and OmicClaw branding
 - `omicverse gateway`: starts gateway mode with the generic OmicVerse brand
 - `omicverse claw`: starts gateway mode by default; use `-q/--question` only for code-only generation
-- `omicverse jarvis`: legacy compatibility entry
 
 If gateway mode is started without `--channel`, the web UI runs in web-only mode.
 

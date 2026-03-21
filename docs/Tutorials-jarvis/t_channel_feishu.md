@@ -103,7 +103,6 @@ http://<你的公网域名或IP>:8080/feishu/events
 
 - `omicclaw`：OmicClaw 品牌入口，强制登录 web 界面
 - `omicverse gateway`：OmicVerse 品牌 gateway 入口
-- `omicverse jarvis --channel feishu`：保留兼容，但不再是主推荐入口
 
 ## 7. 常见问题
 

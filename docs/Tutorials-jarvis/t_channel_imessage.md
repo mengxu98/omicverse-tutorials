@@ -49,7 +49,6 @@ omicclaw \
 ## 4. Current Notes
 
 - Launching through `omicclaw` or `omicverse gateway` keeps the web gateway available.
-- Launching through `omicverse jarvis --channel imessage` is still supported as a compatibility path.
 - Use `omicverse claw -q ...` only for code generation, not for iMessage bot runtime.
 
 ## 5. Troubleshooting
