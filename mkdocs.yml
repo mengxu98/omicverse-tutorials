@@ -223,8 +223,6 @@ plugins:
         - omicverse.nocd.*
         - omicverse.ov_skill_seeker
         - omicverse.ov_skill_seeker.*
-        - omicverse.popv
-        - omicverse.popv.*
         - omicverse.utils.*
  
   - mkdocstrings:
