@@ -11,7 +11,6 @@ The current entry points are:
 - `omicclaw`: branded OmicClaw launcher. It starts gateway mode and forces the web login flow.
 - `omicverse gateway`: generic gateway launcher. It starts the web UI and auto-starts configured channels.
 - `omicverse claw`: gateway mode by default. Use `-q/--question` only when you want one-shot code generation.
-- `omicverse jarvis`: legacy compatibility entry. It still uses the same runtime underneath.
 
 ## 1. Recommended Launch Modes
 
@@ -40,7 +39,6 @@ omicverse claw -q "basic qc and clustering"
 | `omicclaw` | Starts gateway mode with forced login and OmicClaw branding | Main product entry for users |
 | `omicverse gateway` | Starts gateway web UI and background channel runtime | Generic deployment / ops |
 | `omicverse claw` | Starts gateway mode unless `-q`, `--daemon`, `--use-daemon`, or `--stop-daemon` is given | Mixed CLI, especially code-only mode |
-| `omicverse jarvis` | Legacy compatibility launcher | Existing scripts and old habits |
 
 ## 3. Gateway-Only vs Channel-Backed Mode
 
@@ -99,5 +97,5 @@ Channel pages:
 
 ## 6. Related Pages
 
-- Code-only CLI: [Overview and CLI](t_claw_cli.md)
-- OpenClaw integration: [OpenClaw Integration](t_claw_openclaw.md)
+- Setup: [Setup and Auth](t_setup_auth.md)
+- Session workflow: [Session Workflow](t_session_commands.md)

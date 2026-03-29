@@ -54,7 +54,6 @@ omicclaw \
 ## 5. Notes on Current Behavior
 
 - Starting through `omicclaw` or `omicverse gateway` also launches the web gateway.
-- If you want the old channel-only compatibility path, you can still use `omicverse jarvis --channel telegram`.
 - If you want code only, do not use this path; use `omicverse claw -q ...`.
 
 ## 6. Common Commands

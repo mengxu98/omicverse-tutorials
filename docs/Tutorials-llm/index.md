@@ -32,9 +32,6 @@ This page is a markdown overview for the AI-related tutorials currently exposed 
 
 ## OmicClaw and Gateway
 
-- Notebook / pipeline workflows
-  - [J.A.R.V.I.S. with PBMC3k](t_ov_agent_pbmc3k.ipynb)
-  - [J.A.R.V.I.S. with Ten-Task Suite](ov_agent_ten_task_suite.ipynb)
 - Gateway and channel tutorials
   - [OmicClaw Gateway Overview](../Tutorials-jarvis/t_msg_bot_overview.md)
   - [Setup and Auth](../Tutorials-jarvis/t_setup_auth.md)
@@ -44,7 +41,8 @@ This page is a markdown overview for the AI-related tutorials currently exposed 
   - [QQ Tutorial](../Tutorials-jarvis/t_channel_qq.md)
   - [Session Workflow](../Tutorials-jarvis/t_session_commands.md)
   - [Common Issues](../Tutorials-jarvis/t_troubleshooting.md)
-- Coding and MCP remain separate
-  - [Overview and CLI](../Tutorials-jarvis/t_claw_cli.md)
-  - [OpenClaw Integration](../Tutorials-jarvis/t_claw_openclaw.md)
+- MCP tutorials
   - [MCP Overview](t_mcp_guide.md)
+- Notebook / pipeline workflows
+  - [J.A.R.V.I.S. with PBMC3k](t_ov_agent_pbmc3k.ipynb)
+  - [J.A.R.V.I.S. with Ten-Task Suite](ov_agent_ten_task_suite.ipynb)

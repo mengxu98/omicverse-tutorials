@@ -171,9 +171,6 @@ nav:
         - Palette optimization for publication-quality single-cell & spatial plots: Tutorials-plotting/t_palette.ipynb
         - Color system: Tutorials-plotting/t_visualize_colorsystem.ipynb
 - OmicClaw Tutorial:
-    - General[Notebook/pipeline]:
-        - J.A.R.V.I.S. with PBMC3k: Tutorials-llm/t_ov_agent_pbmc3k.ipynb
-        - J.A.R.V.I.S. with Ten-Task Suite: Tutorials-llm/ov_agent_ten_task_suite.ipynb
     - Gateway and Channels:
         - Overview: Tutorials-jarvis/t_msg_bot_overview.md
         - Setup and Auth: Tutorials-jarvis/t_setup_auth.md
@@ -184,9 +181,6 @@ nav:
             - QQ Tutorial: Tutorials-jarvis/t_channel_qq.md
         - Session Workflow: Tutorials-jarvis/t_session_commands.md
         - Common Issues: Tutorials-jarvis/t_troubleshooting.md
-    - Coding [cli/openclaw]:
-        - Overview and CLI: Tutorials-jarvis/t_claw_cli.md
-        - OpenClaw Integration: Tutorials-jarvis/t_claw_openclaw.md
     - MCP Server[cli/agent]:
         - Overview: Tutorials-llm/t_mcp_guide.md
         - Quick Start: Tutorials-llm/t_mcp_quickstart.md
@@ -196,6 +190,9 @@ nav:
         - Runtime and Troubleshooting: Tutorials-llm/t_mcp_runtime.md
         - Reference: Tutorials-llm/t_mcp_reference.md
         - Claude Code Walkthrough: Tutorials-llm/t_mcp_claude_code.md
+    - General[Notebook/pipeline]:
+        - J.A.R.V.I.S. with PBMC3k: Tutorials-llm/t_ov_agent_pbmc3k.ipynb
+        - J.A.R.V.I.S. with Ten-Task Suite: Tutorials-llm/ov_agent_ten_task_suite.ipynb
 - Web Tutorial: omicverse_web_tutorial_en.md
 - GPU Support: GPU_supported_registry_functions.md
 - API documentation: $api/omicverse.***

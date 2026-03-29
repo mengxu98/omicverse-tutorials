@@ -134,9 +134,6 @@ This page is the markdown overview for the tutorial structure defined in `mkdocs
 
 ## OmicClaw
 
-- General notebook / pipeline workflows
-  - [J.A.R.V.I.S. with PBMC3k](Tutorials-llm/t_ov_agent_pbmc3k.ipynb)
-  - [J.A.R.V.I.S. with Ten-Task Suite](Tutorials-llm/ov_agent_ten_task_suite.ipynb)
 - Gateway and channels
   - [Overview](Tutorials-jarvis/t_msg_bot_overview.md)
   - [Setup and Auth](Tutorials-jarvis/t_setup_auth.md)
@@ -146,9 +143,6 @@ This page is the markdown overview for the tutorial structure defined in `mkdocs
   - [QQ Tutorial](Tutorials-jarvis/t_channel_qq.md)
   - [Session Workflow](Tutorials-jarvis/t_session_commands.md)
   - [Common Issues](Tutorials-jarvis/t_troubleshooting.md)
-- Coding
-  - [Overview and CLI](Tutorials-jarvis/t_claw_cli.md)
-  - [OpenClaw Integration](Tutorials-jarvis/t_claw_openclaw.md)
 - MCP server
   - [Overview](Tutorials-llm/t_mcp_guide.md)
   - [Quick Start](Tutorials-llm/t_mcp_quickstart.md)
@@ -158,3 +152,6 @@ This page is the markdown overview for the tutorial structure defined in `mkdocs
   - [Runtime and Troubleshooting](Tutorials-llm/t_mcp_runtime.md)
   - [Reference](Tutorials-llm/t_mcp_reference.md)
   - [Claude Code Walkthrough](Tutorials-llm/t_mcp_claude_code.md)
+- General notebook / pipeline workflows
+  - [J.A.R.V.I.S. with PBMC3k](Tutorials-llm/t_ov_agent_pbmc3k.ipynb)
+  - [J.A.R.V.I.S. with Ten-Task Suite](Tutorials-llm/ov_agent_ten_task_suite.ipynb)

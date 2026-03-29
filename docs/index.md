@@ -21,7 +21,7 @@ To get started with `OmicClaw`, check out the [OmicClaw Gateway Tutorials](Tutor
 - [Bulk Tutorials](Tutorials-bulk/index.md): bulk RNA-seq preprocessing, DE, WGCNA, and deconvolution.
 - [Single-Cell Tutorials](Tutorials-single/index.md): preprocessing, annotation, trajectory, metacells, and multi-omics.
 - [Spatial Tutorials](Tutorials-space/index.md): spatial preprocessing, deconvolution, and downstream analysis.
-- [Foundation Model and AI Tutorials](Tutorials-llm/index.md): `ov.fm`, OmicClaw / gateway deployment, coding workflows, and MCP.
+- [Foundation Model and AI Tutorials](Tutorials-llm/index.md): `ov.fm`, OmicClaw gateway deployment, channel setup, and MCP.
 - [Plotting Tutorials](Tutorials-plotting/index.md): single-cell, bulk, palette, and color-system visualization.
 
 For more details about the omicverse framework, please check out our [publication](https://www.nature.com/articles/s41467-024-50194-3).

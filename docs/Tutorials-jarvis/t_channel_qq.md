@@ -66,7 +66,6 @@ omicclaw \
 
 - `omicclaw`：主推荐入口
 - `omicverse gateway`：等价的通用 gateway 入口
-- `omicverse jarvis --channel qq`：保留兼容
 
 ## 5. 常见问题
 
