@@ -76,19 +76,26 @@ def map_files(docs_dir: Path, docs_zh_dir: Path) -> Dict[str, Dict]:
     }
 
     # File extensions to track
-    tracked_extensions = {".md", ".ipynb", ".py", ".rst"}
+    tracked_extensions = {".md", ".ipynb"}
+
+    # Directories to exclude from tracking
+    excluded_dirs = {"_build", ".ipynb_checkpoints", "api"}
+
+    def should_track(f: Path, base_dir: Path) -> bool:
+        rel = f.relative_to(base_dir)
+        return not any(part in excluded_dirs for part in rel.parts)
 
     # Get all English files
     english_files = [
         f for f in docs_dir.rglob("*")
-        if f.is_file() and f.suffix in tracked_extensions
+        if f.is_file() and f.suffix in tracked_extensions and should_track(f, docs_dir)
     ]
 
     # Get all Chinese files
     chinese_files_set = {
         get_relative_path(f, docs_zh_dir)
         for f in docs_zh_dir.rglob("*")
-        if f.is_file() and f.suffix in tracked_extensions
+        if f.is_file() and f.suffix in tracked_extensions and should_track(f, docs_zh_dir)
     }
 
     manifest["stats"]["total_english_files"] = len(english_files)
