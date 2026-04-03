@@ -1,40 +1,72 @@
-# Welcome to Omicverse✨’s documentation!
+# OmicVerse Documentation
 
-![omicverse-light](https://raw.githubusercontent.com/Starlitnightly/ImageStore/main/omicverse_img/background_light.png#gh-light-mode-only)
-![omicverse-dark](https://raw.githubusercontent.com/Starlitnightly/ImageStore/main/omicverse_img/background_dark.png#gh-dark-mode-only)
+## A single pipeline for the entire transcriptome universe
 
+![omicverse-abstract](https://raw.githubusercontent.com/Starlitnightly/ImageStore/main/omicverse_img/background_light.png)
 
-<div class="result" markdown>
+**OmicVerse v2** is a unified Python framework for modern transcriptomics and multi-omics analysis.
+It brings together **bulk RNA-seq**, **single-cell**, **spatial transcriptomics**, **visualization**,
+**model-based analysis**, and **AI-assisted workflows** in one package.
 
-![Image title](img/logo.png){ align=right width=300 }
+If you find OmicVerse useful for your research, please consider citing the
+[OmicVerse manuscript](https://www.nature.com/articles/s41467-024-50194-3).
 
-**OmicVerse v2** is a unified Python project for modern transcriptomics and multi-omics analysis. It brings together **bulk RNA-seq**, **single-cell**, **spatial transcriptomics**, **downstream visualization**, **model-based analysis**, and **AI-assisted workflows** in one package and documentation system.
+::::{grid} 1 2 3 3
+:gutter: 2
 
-To get started with `omicverse`, check out the [Installation](Installation_guild.md) and [Tutorials](Tutorial.md).
+:::{grid-item-card} Installation {octicon}`plug;1em;`
+:link: Installation_guild
+:link-type: doc
 
-To get started with `OmicClaw`, check out the [OmicClaw Gateway Tutorials](Tutorials-jarvis/t_msg_bot_overview.md)
+New to _omicverse_? Set up your environment with conda, pip, or Docker.
+:::
 
-## Documentation Tracks
+:::{grid-item-card} Tutorials {octicon}`play;1em;`
+:link: tutorials/index
+:link-type: doc
 
-- [Installation](Installation_guild.md): environment setup, PyTorch, conda, pip, and Docker.
-- [Tutorial Overview](Tutorial.md): the full markdown map of the tutorial structure in `mkdocs.yml`.
-- [Bulk Tutorials](Tutorials-bulk/index.md): bulk RNA-seq preprocessing, DE, WGCNA, and deconvolution.
-- [Single-Cell Tutorials](Tutorials-single/index.md): preprocessing, annotation, trajectory, metacells, and multi-omics.
-- [Spatial Tutorials](Tutorials-space/index.md): spatial preprocessing, deconvolution, and downstream analysis.
-- [Foundation Model and AI Tutorials](Tutorials-llm/index.md): `ov.fm`, OmicClaw gateway deployment, channel setup, and MCP.
-- [Plotting Tutorials](Tutorials-plotting/index.md): single-cell, bulk, palette, and color-system visualization.
+Step-by-step tutorials covering bulk, single-cell, spatial, and AI-assisted workflows.
+:::
 
-For more details about the omicverse framework, please check out our [publication](https://www.nature.com/articles/s41467-024-50194-3).
+:::{grid-item-card} API Reference {octicon}`book;1em;`
+:link: api/index
+:link-type: doc
 
-</div>
+Detailed description of every public function and class in OmicVerse.
+:::
 
+:::{grid-item-card} OmicClaw {octicon}`cpu;1em;`
+:link: omicclaw/index
+:link-type: doc
 
+Deploy OmicVerse as a conversational AI agent via Telegram, Feishu, MCP, and more.
+:::
 
-<div class="Contact" markdown>
+:::{grid-item-card} Discussion {octicon}`megaphone;1em;`
+:link: https://github.com/Starlitnightly/omicverse/discussions
 
-## Contact
+Need help? Reach out on our GitHub Discussions forum.
+:::
 
-- Zehua Zeng ([starlitnightly@gmail.com](mailto:starlitnightly@gmail.com), or [steorra@stanford.edu](mailto:steorra@stanford.edu))
-- Xuehai Wang ([lankeqing3910@gmail.com](mailto:lankeqing3910@gmail.com))
+:::{grid-item-card} GitHub {octicon}`mark-github;1em;`
+:link: https://github.com/Starlitnightly/omicverse
 
-</div>
+Find a bug? Interested in contributing? Check out our GitHub.
+:::
+::::
+
+```{toctree}
+:hidden: true
+:maxdepth: 3
+:titlesonly: true
+
+Installation_guild
+tutorials/index
+omicclaw/index
+api/index
+Release_notes
+Developer_guild
+GPU_supported_registry_functions
+Discussion <https://github.com/Starlitnightly/omicverse/discussions>
+GitHub <https://github.com/Starlitnightly/omicverse>
+```
