@@ -10,10 +10,18 @@ from datetime import datetime
 HERE = Path(__file__).parent
 sys.path[:0] = [str(HERE / "extensions")]
 
-# Try to locate the omicverse package from the sibling omicverse-core directory
-_core_path = HERE.parent.parent / "omicverse-core"
-if _core_path.exists():
-    sys.path.insert(0, str(_core_path))
+# Try to locate the omicverse package.
+# Layout 1 (local dev): HERE.parent.parent is the omicverse-core repo root,
+#   which contains the omicverse/ package directory.
+# Layout 2 (legacy sibling): a directory named "omicverse-core" lives next to
+#   the docs checkout (the old arrangement).
+_repo_root = HERE.parent.parent  # omicverse-core repo root when guide is a submodule
+if (_repo_root / "omicverse").is_dir():
+    sys.path.insert(0, str(_repo_root))
+else:
+    _core_path = _repo_root / "omicverse-core"
+    if _core_path.exists():
+        sys.path.insert(0, str(_core_path))
 
 # -- Project information -------------------------------------------------------
 project = "omicverse"
@@ -67,6 +75,25 @@ if _ext_dir.exists():
 # -- Autodoc / Napoleon -------------------------------------------------------
 autosummary_generate = True
 autodoc_member_order = "bysource"
+
+# Packages that may be absent in the Read-the-Docs build environment (either
+# because they need compilation or are heavy optional extras).  Sphinx will
+# create lightweight stub modules so that `import omicverse.space` and friends
+# succeed even when these packages aren't installed.
+autodoc_mock_imports = [
+    "skmisc",
+    "torch",
+    "torch_geometric",
+    "tangram",
+    "cell2location",
+    "starfysh",
+    "spatrio",
+    "commot",
+    "stlearn",
+    "STAGATE_pyG",
+    "STAligner",
+    "flashdeconv",
+]
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
