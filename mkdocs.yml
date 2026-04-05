@@ -253,6 +253,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.indexes
+    - navigation.tabs
+    - navigation.sections
 
 markdown_extensions:
   - admonition
