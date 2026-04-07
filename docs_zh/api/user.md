@@ -6,8 +6,32 @@
 import omicverse as ov
 ```
 
+> 本页根据 OmicVerse registry 中的 `@register_function` 自动生成。
+> 当前列出的公开 registry API 数量：292
+
 ```{eval-rst}
 .. currentmodule:: omicverse
+```
+
+## 顶层 API
+
+```{eval-rst}
+.. autosummary::
+   :toctree: reference/
+   :nosignatures:
+
+   generate_reference_table
+```
+
+## 设置
+
+```{eval-rst}
+.. autosummary::
+   :toctree: reference/
+   :nosignatures:
+
+   settings.cpu_gpu_mixed_init
+   settings.gpu_init
 ```
 
 ## 数据输入/输出
@@ -17,337 +41,267 @@ import omicverse as ov
    :toctree: reference/
    :nosignatures:
 
-   read
-   io.read_h5ad
-   io.read_h5ad
+   io.load
+   io.read
    io.read_10x_h5
    io.read_10x_mtx
+   io.read_csv
+   io.read_h5ad
    io.read_nanostring
    io.read_visium_hd
+   io.read_visium_hd_bin
+   io.read_visium_hd_seg
+   io.save
+   omicverse.io.single._rust.convert_adata_for_rust
+   omicverse.io.single._rust.convert_to_pandas
+   omicverse.io.single._rust.wrap_dataframe
+   omicverse.io.spatial._visium.read_visium
 ```
 
-## 预处理 (pp)
-
-_质量控制与过滤_
+## 比对
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
-   pp.qc
+   alignment.bulk_rnaseq_pipeline
+   alignment.count
+   alignment.fastp
+   alignment.featureCount
+   alignment.fqdump
+   alignment.parallel_fastq_dump
+   alignment.prefetch
+   alignment.ref
+   alignment.STAR
+```
+
+## 预处理 (`pp`)
+
+```{eval-rst}
+.. autosummary::
+   :toctree: reference/
+   :nosignatures:
+
+   pp.anndata_to_CPU
+   pp.anndata_to_GPU
+   pp.binary_search
    pp.filter_cells
    pp.filter_genes
-   pp.scrublet
-```
-
-_归一化与特征选择_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pp.normalize_total
-   pp.log1p
-   pp.highly_variable_genes
    pp.highly_variable_features
-   pp.normalize_pearson_residuals
-   pp.recover_counts
-```
-
-_降维与图构建_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pp.pca
-   pp.neighbors
-   pp.umap
-   pp.tsne
-   pp.mde
-```
-
-_聚类_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
+   pp.highly_variable_genes
+   pp.identify_robust_genes
    pp.leiden
+   pp.log1p
    pp.louvain
-```
-
-_批次校正与缩放_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pp.scale
+   pp.mde
+   pp.neighbors
+   pp.normalize_pearson_residuals
+   pp.pca
+   pp.preprocess
+   pp.qc
+   pp.recover_counts
    pp.regress
    pp.regress_and_scale
    pp.remove_cc_genes
+   pp.scale
    pp.score_genes_cell_cycle
+   pp.scrublet
+   pp.scrublet_simulate_doublets
+   pp.select_hvf_pegasus
+   pp.sude
+   pp.tsne
+   pp.umap
 ```
 
-## 单细胞 (single)
-
-_注释_
+## 单细胞 (`single`)
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
-   single.pySCSA
-   single.MetaTiME
-   single.CellVote
-   single.gptcelltype
-   single.gptcelltype_local
-   single.CellOntologyMapper
    single.Annotation
    single.AnnotationRef
-```
-
-_轨迹与细胞命运_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   single.TrajInfer
-   single.Velo
-   single.Fate
+   single.autoResolution
+   single.batch_correction
+   single.CellOntologyMapper
+   single.CellVote
+   single.convert_human_to_mouse_network
+   single.cosg
    single.cytotrace2
-```
-
-_细胞结构_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   single.MetaCell
+   single.DCT
    single.DEG
-   single.SCENIC
-   single.aucell
-   single.geneset_aucell
-   single.cellphonedb_v5
+   single.download_cl
    single.Drug_Response
-```
-
-_批次校正与整合_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   single.Batch
-   single.pySIMBA
-   single.Integration
-```
-
-_多组学_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
+   single.factor_correlation
+   single.factor_exact
+   single.Fate
+   single.find_markers
+   single.gene_trends
+   single.generate_scRNA_report
+   single.geneset_aucell
+   single.get_celltype_marker
+   single.get_cluster_celltype
+   single.get_markers
+   single.get_obs_value
+   single.get_weights
+   single.GLUE_pair
+   single.gptcelltype
+   single.gptcelltype_local
+   single.lazy
+   single.load_human_prior_interaction_network
+   single.MetaCell
+   single.MetaTiME
+   single.mouse_hsc_nestorowa16
+   single.pathway_aucell
+   single.pathway_aucell_enrichment
+   single.pathway_enrichment
+   single.pathway_enrichment_plot
+   single.plot_metacells
+   single.pyCEFCON
    single.pyMOFA
    single.pyMOFAART
-   single.GLUE_pair
+   single.pySCSA
+   single.pySIMBA
    single.pyTOSICA
+   single.run_cellphonedb_v5
+   single.scanpy_cellanno_from_dict
+   single.SCENIC
+   single.TrajInfer
+   single.Velo
 ```
 
-_主题建模_
+## Bulk RNA-seq (`bulk`)
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
-   single.cNMF
-```
-
-## Bulk RNA-seq (bulk)
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
+   bulk.batch_correction
+   bulk.Deconvolution
+   bulk.geneset_enrichment
+   bulk.geneset_plot
+   bulk.geneset_plot_multi
+   bulk.Matrix_ID_mapping
    bulk.pyDEG
    bulk.pyGSEA
    bulk.pyPPI
-   bulk.pyWGCNA
    bulk.pyTCGA
-   bulk.Deconvolution
-   bulk.Matrix_ID_mapping
-   bulk.batch_correction
-   bulk.geneset_enrichment
+   bulk.string_interaction
 ```
 
-## 空间转录组学 (space)
+## 空间转录组学 (`space`)
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
+   space.bin2cell
+   space.Cal_Spatial_Net
+   space.calculate_gene_signature
+   space.CAST
+   space.CellLoc
+   space.CellMap
    space.clusters
+   space.create_communication_anndata
+   space.crop_space_visium
    space.Deconvolution
+   space.GASTON
+   space.map_spatial_auto
+   space.map_spatial_manual
+   space.merge_cluster
+   space.moranI
+   space.pySpaceFlow
    space.pySTAGATE
    space.pySTAligner
-   space.pySpaceFlow
-   space.Tangram
-   space.STT
-   space.GASTON
-   space.Cal_Spatial_Net
+   space.read_visium_10x
+   space.rotate_space_visium
+   space.salvage_secondary_labels
+   space.spatial_autocorr
    space.spatial_neighbors
-   space.moranI
+   space.STT
+   space.svg
+   space.sync_visium_hd_seg_geometries
+   space.Tangram
+   space.update_classification_from_database
+   space.visium_10x_hd_cellpose_expand
+   space.visium_10x_hd_cellpose_gex
+   space.visium_10x_hd_cellpose_he
 ```
 
-## Bulk 转单细胞 (bulk2single)
+## Bulk 转单细胞 (`bulk2single`)
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
-   bulk2single.BulkTrajBlend
    bulk2single.Bulk2Single
+   bulk2single.bulk2single_plot_cellprop
+   bulk2single.bulk2single_plot_correlation
+   bulk2single.BulkTrajBlend
    bulk2single.Single2Spatial
 ```
 
-## 基础模型 (fm)
+## 绘图 (`pl`)
 
 ```{eval-rst}
 .. autosummary::
    :toctree: reference/
    :nosignatures:
 
-   fm.run
-   fm.list_models
-   fm.get_registry
-   fm.describe_model
-   fm.select_model
-   fm.preprocess_validate
-   fm.profile_data
-   fm.interpret_results
-   fm.ModelSpec
-   fm.ModelRegistry
-```
-
-## 绘图 (pl)
-
-_嵌入与降维_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.embedding
-   pl.embedding_celltype
-   pl.embedding_density
-   pl.embedding_multi
-   pl.embedding_atlas
-   pl.pca
-   pl.umap
-   pl.tsne
-```
-
-_差异表达_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.volcano
-   pl.complexheatmap
-   pl.marker_heatmap
-   pl.rank_genes_groups_dotplot
-   pl.dotplot
-   pl.markers_dotplot
-```
-
-_细胞比例与组成_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.cellproportion
-   pl.cellstackarea
-   pl.venn
+   omicverse.pl._plot_backend.plot_ConvexHull
+   omicverse.pl._plot_backend.pyomic_palette
+   omicverse.pl._plot_backend.stacking_vol
+   pl.add_density_contour
+   pl.add_palue
+   pl.add_pie2spatial
+   pl.add_streamplot
    pl.bardotplot
-```
-
-_分布_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.violin
-   pl.violin_box
    pl.boxplot
-   pl.plot_boxplots
-```
-
-_空间_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.spatial
-   pl.plot_spatial
-   pl.highlight_spatial_region
-```
-
-_细胞通信_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
+   pl.calculate_gene_density
    pl.ccc_heatmap
    pl.ccc_network_plot
    pl.ccc_stat_plot
+   pl.cell_cor_heatmap
    pl.CellChatViz
-   pl.cpdb_heatmap
-   pl.cpdb_network
-   pl.cpdb_chord
-```
-
-_颜色与调色板_
-
-```{eval-rst}
-.. autosummary::
-   :toctree: reference/
-   :nosignatures:
-
-   pl.palette_112
-   pl.palette_28
-   pl.sc_color
+   pl.cellproportion
+   pl.complexheatmap
+   pl.contour
+   pl.ConvexHull
+   pl.dotplot
+   pl.dynamic_heatmap
+   pl.embedding
+   pl.embedding_adjust
+   pl.embedding_atlas
+   pl.embedding_celltype
+   pl.embedding_density
+   pl.feature_heatmap
    pl.ForbiddenCity
-   pl.optim_palette
-   pl.colormaps_palette
+   pl.gen_mpl_labels
+   pl.geneset_wordcloud
+   pl.group_heatmap
+   pl.marker_heatmap
+   pl.markers_dotplot
+   pl.palette
+   pl.plot_cellproportion
+   pl.plot_embedding_celltype
+   pl.plot_flowsig_network
+   pl.plot_grouped_fractions
+   pl.plot_pca_variance_ratio
+   pl.plot_set
+   pl.plot_spatial
+   pl.plot_text_set
+   pl.rank_genes_groups_dotplot
+   pl.single_group_boxplot
+   pl.tsne
+   pl.umap
+   pl.venn
+   pl.violin
+   pl.volcano
 ```
 
 ## 数据集
@@ -357,13 +311,113 @@ _颜色与调色板_
    :toctree: reference/
    :nosignatures:
 
-   datasets.pbmc3k
-   datasets.zebrafish
-   datasets.pancreatic_endocrinogenesis
-   datasets.dentate_gyrus
+   datasets.bhattacherjee
+   datasets.blobs
+   datasets.bm
+   datasets.bone_marrow
+   datasets.burczynski06
+   datasets.chromaffin
+   datasets.cite_seq
    datasets.create_mock_dataset
-   datasets.predefined_signatures
+   datasets.decov_bulk_covid_bulk
+   datasets.decov_bulk_covid_single
+   datasets.dentate_gyrus
+   datasets.dentate_gyrus_scvelo
+   datasets.download_data
+   datasets.download_data_requests
+   datasets.get_adata
+   datasets.gillespie
+   datasets.haber
+   datasets.hematopoiesis
+   datasets.hematopoiesis_raw
+   datasets.hg_forebrain_glutamatergic
+   datasets.hl60
+   datasets.human_tfs
+   datasets.krumsiek11
+   datasets.moignard15
+   datasets.multi_brain_5k
+   datasets.nascseq
+   datasets.pancreas_cellrank
+   datasets.pancreatic_endocrinogenesis
+   datasets.paul15
+   datasets.pbmc3k
+   datasets.pbmc8k
+   datasets.sc_ref_Lymph_Node
+   datasets.sceu_seq_organoid
+   datasets.sceu_seq_rpe1
+   datasets.scifate
+   datasets.scnt_seq_neuron_labeling
+   datasets.scnt_seq_neuron_splicing
+   datasets.scslamseq
+   datasets.seqfish
+   datasets.toggleswitch
+   datasets.zebrafish
 ```
 
-[anndata]: https://anndata.readthedocs.io/en/stable/
-[scanpy]: https://scanpy.readthedocs.io/en/stable/index.html
+## 外部集成 (`external`)
+
+```{eval-rst}
+.. autosummary::
+   :toctree: reference/
+   :nosignatures:
+
+   external.GraphST
+   omicverse.external.cnmf.cnmf.cNMF
+   omicverse.external.PyWGCNA.utils.readWGCNA
+   omicverse.external.PyWGCNA.wgcna.pyWGCNA
+```
+
+## 工具函数 (`utils`)
+
+```{eval-rst}
+.. autosummary::
+   :toctree: reference/
+   :nosignatures:
+
+   omicverse.utils.biocontext._tools.call_tool
+   omicverse.utils.biocontext._tools.get_ensembl_id
+   omicverse.utils.biocontext._tools.get_fulltext
+   omicverse.utils.biocontext._tools.get_uniprot_id
+   omicverse.utils.biocontext._tools.list_tools
+   omicverse.utils.biocontext._tools.query_alphafold
+   omicverse.utils.biocontext._tools.query_cell_ontology
+   omicverse.utils.biocontext._tools.query_chebi
+   omicverse.utils.biocontext._tools.query_efo
+   omicverse.utils.biocontext._tools.query_go
+   omicverse.utils.biocontext._tools.query_hpa
+   omicverse.utils.biocontext._tools.query_interpro
+   omicverse.utils.biocontext._tools.query_opentargets
+   omicverse.utils.biocontext._tools.query_panglaodb
+   omicverse.utils.biocontext._tools.query_reactome
+   omicverse.utils.biocontext._tools.query_string
+   omicverse.utils.biocontext._tools.query_uniprot
+   omicverse.utils.biocontext._tools.search_clinical_trials
+   omicverse.utils.biocontext._tools.search_drugs
+   omicverse.utils.biocontext._tools.search_interpro
+   omicverse.utils.biocontext._tools.search_literature
+   omicverse.utils.biocontext._tools.search_preprints
+   omicverse.utils.biocontext._tools.search_pride
+   utils.cal_paga
+   utils.cluster
+   utils.convert2gene_id
+   utils.convert2gene_symbol
+   utils.convert2symbol
+   utils.download_CaDRReS_model
+   utils.download_GDSC_data
+   utils.download_geneid_annotation_pair
+   utils.download_pathway_database
+   utils.download_tosica_gmt
+   utils.geneset_prepare
+   utils.get_gene_annotation
+   utils.gtf_to_pair_tsv
+   utils.LDA_topic
+   utils.mde
+   utils.plot_paga
+   utils.refine_label
+   utils.retrieve_layers
+   utils.roe
+   utils.store_layers
+   utils.symbol2id
+   utils.weighted_knn_trainer
+   utils.weighted_knn_transfer
+```
