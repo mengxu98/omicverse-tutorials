@@ -37,3 +37,4 @@ site/
 .idea/
 *.swp
 *.swo
+*site*/
