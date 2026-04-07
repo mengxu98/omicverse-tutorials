@@ -31,6 +31,15 @@ release = "2.1.1"
 version = release
 repository_url = "https://github.com/Starlitnightly/omicverse"
 language = "zh_CN"
+default_github_ref = "master"
+
+
+def _fallback_github_ref() -> str:
+    for key in ("READTHEDOCS_GIT_IDENTIFIER", "GITHUB_REF_NAME", "READTHEDOCS_VERSION_NAME"):
+        value = os.environ.get(key)
+        if value and value not in {"latest", "stable"}:
+            return value
+    return default_github_ref
 
 try:
     from importlib.metadata import metadata as _pkg_meta
@@ -45,7 +54,7 @@ html_context = {
     "display_github": True,
     "github_user": "Starlitnightly",
     "github_repo": project,
-    "github_version": "main",
+    "github_version": _fallback_github_ref(),
     "conf_py_path": "/docs_zh/",
 }
 
@@ -205,7 +214,7 @@ if not _git_ref or re.search(r"[\^~]", _git_ref):
     try:
         _git_ref = _git("rev-parse", "HEAD")
     except Exception:
-        _git_ref = "main"
+        _git_ref = _fallback_github_ref()
 
 _omicverse_module_path = None
 try:
