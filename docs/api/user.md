@@ -274,6 +274,7 @@ _Differential expression_
    :nosignatures:
 
    pl.volcano
+   pl.complexheatmap
    pl.marker_heatmap
    pl.rank_genes_groups_dotplot
    pl.dotplot
@@ -325,10 +326,13 @@ _Cell communication_
    :toctree: reference/
    :nosignatures:
 
+   pl.ccc_heatmap
+   pl.ccc_network_plot
+   pl.ccc_stat_plot
+   pl.CellChatViz
    pl.cpdb_heatmap
    pl.cpdb_network
    pl.cpdb_chord
-   pl.CellChatViz
 ```
 
 _Colours & palettes_
