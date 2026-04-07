@@ -6,8 +6,9 @@
 import omicverse as ov
 ```
 
-> 本页根据 OmicVerse registry 中的 `@register_function` 自动生成。
-> 当前列出的公开 registry API 数量：292
+本页根据 OmicVerse registry 中的 `@register_function` 自动生成。
+
+当前列出的公开 registry API 数量：293
 
 ```{eval-rst}
 .. currentmodule:: omicverse
@@ -52,10 +53,7 @@ import omicverse as ov
    io.read_visium_hd_bin
    io.read_visium_hd_seg
    io.save
-   omicverse.io.single._rust.convert_adata_for_rust
-   omicverse.io.single._rust.convert_to_pandas
-   omicverse.io.single._rust.wrap_dataframe
-   omicverse.io.spatial._visium.read_visium
+   io.spatial.read_visium
 ```
 
 ## 比对
@@ -127,6 +125,7 @@ import omicverse as ov
    single.batch_correction
    single.CellOntologyMapper
    single.CellVote
+   single.cNMF
    single.convert_human_to_mouse_network
    single.cosg
    single.cytotrace2
@@ -189,6 +188,8 @@ import omicverse as ov
    bulk.pyGSEA
    bulk.pyPPI
    bulk.pyTCGA
+   bulk.pyWGCNA
+   bulk.readWGCNA
    bulk.string_interaction
 ```
 
@@ -203,6 +204,7 @@ import omicverse as ov
    space.Cal_Spatial_Net
    space.calculate_gene_signature
    space.CAST
+   space.cellcharter
    space.CellLoc
    space.CellMap
    space.clusters
@@ -253,9 +255,9 @@ import omicverse as ov
    :toctree: reference/
    :nosignatures:
 
-   omicverse.pl._plot_backend.plot_ConvexHull
-   omicverse.pl._plot_backend.pyomic_palette
-   omicverse.pl._plot_backend.stacking_vol
+   pl._plot_backend.plot_ConvexHull
+   pl._plot_backend.pyomic_palette
+   pl._plot_backend.stacking_vol
    pl.add_density_contour
    pl.add_palue
    pl.add_pie2spatial
@@ -362,9 +364,6 @@ import omicverse as ov
    :nosignatures:
 
    external.GraphST
-   omicverse.external.cnmf.cnmf.cNMF
-   omicverse.external.PyWGCNA.utils.readWGCNA
-   omicverse.external.PyWGCNA.wgcna.pyWGCNA
 ```
 
 ## 工具函数 (`utils`)
@@ -374,34 +373,36 @@ import omicverse as ov
    :toctree: reference/
    :nosignatures:
 
-   omicverse.utils.biocontext._tools.call_tool
-   omicverse.utils.biocontext._tools.get_ensembl_id
-   omicverse.utils.biocontext._tools.get_fulltext
-   omicverse.utils.biocontext._tools.get_uniprot_id
-   omicverse.utils.biocontext._tools.list_tools
-   omicverse.utils.biocontext._tools.query_alphafold
-   omicverse.utils.biocontext._tools.query_cell_ontology
-   omicverse.utils.biocontext._tools.query_chebi
-   omicverse.utils.biocontext._tools.query_efo
-   omicverse.utils.biocontext._tools.query_go
-   omicverse.utils.biocontext._tools.query_hpa
-   omicverse.utils.biocontext._tools.query_interpro
-   omicverse.utils.biocontext._tools.query_opentargets
-   omicverse.utils.biocontext._tools.query_panglaodb
-   omicverse.utils.biocontext._tools.query_reactome
-   omicverse.utils.biocontext._tools.query_string
-   omicverse.utils.biocontext._tools.query_uniprot
-   omicverse.utils.biocontext._tools.search_clinical_trials
-   omicverse.utils.biocontext._tools.search_drugs
-   omicverse.utils.biocontext._tools.search_interpro
-   omicverse.utils.biocontext._tools.search_literature
-   omicverse.utils.biocontext._tools.search_preprints
-   omicverse.utils.biocontext._tools.search_pride
+   utils.biocontext.call_tool
+   utils.biocontext.get_ensembl_id
+   utils.biocontext.get_fulltext
+   utils.biocontext.get_uniprot_id
+   utils.biocontext.list_tools
+   utils.biocontext.query_alphafold
+   utils.biocontext.query_cell_ontology
+   utils.biocontext.query_chebi
+   utils.biocontext.query_efo
+   utils.biocontext.query_go
+   utils.biocontext.query_hpa
+   utils.biocontext.query_interpro
+   utils.biocontext.query_opentargets
+   utils.biocontext.query_panglaodb
+   utils.biocontext.query_reactome
+   utils.biocontext.query_string
+   utils.biocontext.query_uniprot
+   utils.biocontext.search_clinical_trials
+   utils.biocontext.search_drugs
+   utils.biocontext.search_interpro
+   utils.biocontext.search_literature
+   utils.biocontext.search_preprints
+   utils.biocontext.search_pride
    utils.cal_paga
    utils.cluster
    utils.convert2gene_id
    utils.convert2gene_symbol
    utils.convert2symbol
+   utils.convert_adata_for_rust
+   utils.convert_to_pandas
    utils.download_CaDRReS_model
    utils.download_GDSC_data
    utils.download_geneid_annotation_pair
@@ -420,4 +421,5 @@ import omicverse as ov
    utils.symbol2id
    utils.weighted_knn_trainer
    utils.weighted_knn_transfer
+   utils.wrap_dataframe
 ```

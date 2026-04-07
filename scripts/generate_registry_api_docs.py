@@ -92,6 +92,16 @@ SECTION_META = {
     },
 }
 
+PUBLIC_PATH_OVERRIDES = {
+    "omicverse.external.PyWGCNA.utils.readWGCNA": ["bulk.readWGCNA"],
+    "omicverse.external.PyWGCNA.wgcna.pyWGCNA": ["bulk.pyWGCNA"],
+    "omicverse.external.cnmf.cnmf.cNMF": ["single.cNMF"],
+    "omicverse.io.single._rust.convert_adata_for_rust": ["utils.convert_adata_for_rust"],
+    "omicverse.io.single._rust.convert_to_pandas": ["utils.convert_to_pandas"],
+    "omicverse.io.single._rust.wrap_dataframe": ["utils.wrap_dataframe"],
+    "omicverse.io.spatial._visium.read_visium": ["io.spatial.read_visium"],
+}
+
 
 @dataclass(frozen=True)
 class RegistryEntry:
@@ -111,7 +121,14 @@ class RegistryEntry:
         return self.module_name
 
     def candidate_public_paths(self) -> list[str]:
+        override = PUBLIC_PATH_OVERRIDES.get(self.full_name)
+        if override is not None:
+            return override
+
         rel = self.module_relative
+
+        if rel == "utils.biocontext._tools":
+            return [f"utils.biocontext.{self.short_name}"]
 
         if rel == "_settings":
             if self.parent_classes and self.parent_classes[0] == "omicverseConfig":
@@ -132,6 +149,14 @@ class RegistryEntry:
         if self.parent_classes:
             return ".".join((self.module_name, *self.parent_classes, self.short_name))
         return self.full_name
+
+    @property
+    def relative_import_path(self) -> str:
+        prefix = "omicverse."
+        absolute = self.absolute_import_path
+        if absolute.startswith(prefix):
+            return absolute[len(prefix) :]
+        return absolute
 
 
 def _is_register_function_decorator(node: ast.expr) -> bool:
@@ -285,7 +310,7 @@ def choose_public_paths(
         if chosen_path is None and validate_public:
             absolute_candidate = entry.absolute_import_path
             if _resolve_absolute_symbol(absolute_candidate):
-                chosen_path = absolute_candidate
+                chosen_path = entry.relative_import_path
 
         if chosen_path is None:
             unresolved.append(entry)
@@ -340,8 +365,9 @@ def render_doc(locale: str, public_paths: list[str]) -> str:
         "import omicverse as ov",
         "```",
         "",
-        f"> {meta['generated_note']}",
-        f"> {meta['all_registered'].format(count=len(public_paths))}",
+        meta["generated_note"],
+        "",
+        meta["all_registered"].format(count=len(public_paths)),
         "",
         "```{eval-rst}",
         ".. currentmodule:: omicverse",
